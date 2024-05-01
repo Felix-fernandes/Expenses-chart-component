@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="caixa">
+            <div class="cima">
+                <div class="conteudo1">
+                    <p>Meu saldo</p>
+                    <p style="font-size: 25px;font-weight: bold;">$921.48</p>
+                </div>
+                <img src="C:\Users\FELIX FERNANDES.DESKTOP-6BAI4FU\Desktop\front end mentor projects\expenses-chart-component-main\images\logo.svg" alt="">
+            </div>
+            <div class="baixo">
+                <p style="font-size: 25px;font-weight: bold;">Gastando - Últimos 7 dias</p>
+                <div class="grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <hr>
+                <div class="ultimo">
+                    <div>
+                        <p>Total do mês</p>
+                        <p style="font-size: 30px;color:  hsl(25, 47%, 15%);font-weight: bold;"> $478.33</p>
+                    </div>
+                    <div>
+                        <p>+2.4% </p>
+                        <p>do mes passado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui','Sex', 'Sab', 'Dom'],
+            datasets: [{
+              label: 'Saldo',
+              data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28,25.48],
+              borderWidth: 1,
+              backgroundColor: 'hsl(186, 34%, 60%)',
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+</body>
+</html>
